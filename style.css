@@ -90,7 +90,7 @@ a { color: var(--ink); }
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.waitform input {
+.waitform input[type="email"] {
   flex: 1 1 12rem;
   font: inherit;
   padding: 0.7rem 0.75rem;
@@ -109,27 +109,6 @@ a { color: var(--ink); }
 }
 .waitform button:hover { opacity: 0.9; }
 .waitform button:disabled { opacity: 0.5; cursor: default; }
-
-.still {
-  margin: 0 0 2rem;
-}
-.still-frame {
-  min-height: 12rem;
-  border: 1px dashed var(--stone);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem 1rem;
-  color: var(--ink);
-  aspect-ratio: 16 / 9;
-}
-.still-sub {
-  color: var(--stone);
-  font-size: 0.95rem;
-  margin-top: 0.35rem;
-}
 
 footer {
   max-width: 40rem;

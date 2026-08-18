@@ -3,6 +3,12 @@
   var status = document.getElementById("waitstatus");
   if (!form || !status) return;
 
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("joined") === "1") {
+    status.hidden = false;
+    status.textContent = "You're on the list. We'll tell you when the first kit is real.";
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     var email = (form.email.value || "").trim();
@@ -34,13 +40,12 @@
           status.textContent = "You're on the list. We'll tell you when the first kit is real.";
           form.reset();
         } else {
-          status.textContent = "That didn't go through. Try again in a minute.";
+          status.textContent = "That didn't go through. Try the form again, or turn off JavaScript and submit once more.";
           btn.disabled = false;
         }
       })
       .catch(function () {
-        status.textContent = "That didn't go through. Try again in a minute.";
-        btn.disabled = false;
+        form.submit();
       });
   });
 })();
