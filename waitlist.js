@@ -1,5 +1,5 @@
 (function () {
-  var HASH = "";
+  var HASH = "2b904b1e72f8a6f5267d97eb4619f108";
   var form = document.getElementById("waitform");
   var status = document.getElementById("waitstatus");
   if (!form || !status) return;
