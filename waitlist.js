@@ -1,7 +1,12 @@
 (function () {
+  var HASH = "";
   var form = document.getElementById("waitform");
   var status = document.getElementById("waitstatus");
   if (!form || !status) return;
+
+  if (HASH) {
+    form.action = "https://formsubmit.co/" + HASH;
+  }
 
   var params = new URLSearchParams(window.location.search);
   if (params.get("joined") === "1") {
@@ -10,16 +15,23 @@
   }
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
     var email = (form.email.value || "").trim();
     if (!email) return;
 
+    if (!HASH) {
+      e.preventDefault();
+      status.hidden = false;
+      status.textContent = "Waitlist is not open yet. Check back shortly.";
+      return;
+    }
+
+    e.preventDefault();
     var btn = form.querySelector("button");
     btn.disabled = true;
     status.hidden = false;
     status.textContent = "Joining…";
 
-    fetch("https://formsubmit.co/ajax/helvio88@gmail.com", {
+    fetch("https://formsubmit.co/ajax/" + HASH, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
