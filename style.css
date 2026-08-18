@@ -12,7 +12,6 @@
   --color-rose: #ff5c7a;
   --color-emerald: #2dd4a8;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -67,7 +66,7 @@ main {
   padding: 1rem 1.25rem 3rem;
 }
 
-section { margin: 2.25rem 0; }
+section { margin: 1.25rem 0; }
 h1 {
   font-size: 2rem;
   line-height: 1.2;
@@ -84,7 +83,7 @@ h2 {
   color: var(--color-muted);
 }
 
-.hero {
+.panel {
   background: linear-gradient(180deg, var(--color-panel-2), var(--color-panel));
   border: 1px solid rgba(62, 203, 255, 0.08);
   border-radius: 12px;
