@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dTb · dashcam T board</title>
+  <meta name="description" content="A Pi in the Tesla acts as the dashcam drive. Footage leaves the car on home wifi. We render. You watch.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">dTb</div>
+    <div class="sub">dashcam T board</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="kicker">What you get</p>
+      <h1>Park at home. Wake up to a finished clip.</h1>
+      <p class="lede">A small computer in the car is the dashcam USB. When you are on home wifi, the footage leaves the car. We render it. You watch and share from the web.</p>
+      <p class="lede">You do not copy sticks. You do not run Docker. You do not render mosaics.</p>
+    </section>
+
+    <section>
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li>
+          <strong>In the car.</strong>
+          A Raspberry Pi (or similar) runs <a href="https://github.com/marcone/teslausb">TeslaUSB</a>. The car thinks it is a USB drive. SavedClips and Sentry write to it.
+        </li>
+        <li>
+          <strong>On home wifi.</strong>
+          You park in range. The Pi archives the footage off the car. That wifi needs internet so the archive can reach us.
+        </li>
+        <li>
+          <strong>We render.</strong>
+          Four cameras become one watchable clip. That work happens on our side, not on your PC.
+        </li>
+        <li>
+          <strong>You watch.</strong>
+          Finished video is served from S3 (or S3-compatible storage). Watch it. Share a link.
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>You need this</h2>
+      <ul>
+        <li>A Tesla with dashcam (SavedClips / Sentry)</li>
+        <li>You park in range of home wifi</li>
+        <li>That wifi is WPA2 PSK</li>
+        <li>That wifi has internet (the archive has to reach us)</li>
+        <li>Pi Zero W and Zero 2 W are 2.4 GHz only. If that is the board, your home wifi must have a 2.4 GHz network</li>
+        <li>An SBC with USB OTG (Pi Zero W, Zero 2 W, Pi 4, or Pi 5 with the right cable)</li>
+        <li>64 GB or larger microSD</li>
+        <li>A data-capable USB cable. Charge-only cables fail</li>
+        <li>A case</li>
+        <li>Optional: a USB splitter so you keep a car USB port</li>
+      </ul>
+      <p class="note">Hardware list is from the TeslaUSB docs, not a guess. <a href="https://github.com/marcone/teslausb">teslausb</a> · <a href="https://github.com/marcone/teslausb/wiki/Hardware">hardware wiki</a></p>
+    </section>
+
+    <section>
+      <h2>You do not need this</h2>
+      <ul>
+        <li>A GPU or NVENC box at home</li>
+        <li>Your own rack</li>
+        <li>Docker</li>
+        <li>A DIY mosaic pipeline</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Not included</h2>
+      <ul>
+        <li>No DIY render. That recipe fails. We render.</li>
+        <li>No Tesla trademarks. No Autopilot badge. No Tesla wheel art.</li>
+        <li>Not a Tesla product. Not affiliated with Tesla, Inc.</li>
+      </ul>
+    </section>
+
+    <section class="wait">
+      <h2>Waitlist</h2>
+      <p>This page is the product, not a store. If you want in, say so.</p>
+      <p><a class="btn" href="mailto:helvio88@gmail.com?subject=dTb%20waitlist">Email the waitlist</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>dTb is dashcam T board. TeslaUSB is <a href="https://github.com/marcone/teslausb">marcone/teslausb</a>.</p>
+    <p>Not affiliated with Tesla, Inc. Tesla is a trademark of Tesla, Inc.</p>
+  </footer>
+</body>
+</html>
