@@ -1,12 +1,11 @@
 (function () {
-  var HASH = "2b904b1e72f8a6f5267d97eb4619f108";
   var form = document.getElementById("waitform");
   var status = document.getElementById("waitstatus");
   if (!form || !status) return;
 
-  if (HASH) {
-    form.action = "https://formsubmit.co/" + HASH;
-  }
+  var action = String(form.action || "").trim();
+  var ajaxUrl = action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+  var hashed = /^https:\/\/formsubmit\.co\/[0-9a-fA-F]{32}\/?$/.test(action);
 
   var params = new URLSearchParams(window.location.search);
   if (params.get("joined") === "1") {
@@ -18,10 +17,10 @@
     var email = (form.email.value || "").trim();
     if (!email) return;
 
-    if (!HASH) {
+    if (!hashed) {
       e.preventDefault();
       status.hidden = false;
-      status.textContent = "Waitlist is not open yet. Check back shortly.";
+      status.textContent = "This form cannot send. Reload the page and try again.";
       return;
     }
 
@@ -31,7 +30,7 @@
     status.hidden = false;
     status.textContent = "Joining…";
 
-    fetch("https://formsubmit.co/ajax/" + HASH, {
+    fetch(ajaxUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

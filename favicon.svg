@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#f4efe6"/>
-  <text x="32" y="40" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.04em" fill="#1a1814">dTb</text>
+  <rect width="64" height="64" fill="#05070c"/>
+  <rect width="64" height="3" fill="#3ecbff"/>
+  <text x="32" y="40" text-anchor="middle" font-family="DM Sans, ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.04em" fill="#e8eefc">dTb</text>
 </svg>

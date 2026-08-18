@@ -18,6 +18,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Fail closed if Join is not hashed
+        run: |
+          set -euo pipefail
+          if ! grep -qE 'action="https://formsubmit\.co/[0-9a-fA-F]{32}"' index.html; then
+            echo "form action must be a hashed FormSubmit URL"
+            exit 1
+          fi
+          echo "hash present"
+          if grep -q 'var HASH = ""' waitlist.js; then
+            echo "waitlist.js must not empty HASH"
+            exit 1
+          fi
+          if grep -q 'Waitlist is not open yet' waitlist.js; then
+            echo "waitlist.js must not close Join in script"
+            exit 1
+          fi
+          if grep -qiE 'gmail|helvio88@' index.html waitlist.js style.css README.md; then
+            echo "inbox must not appear in site files"
+            exit 1
+          fi
+          if grep -qE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}' index.html waitlist.js style.css README.md; then
+            echo "inbox must not appear in site files"
+            exit 1
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
