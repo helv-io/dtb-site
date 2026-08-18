@@ -28,10 +28,6 @@ body {
   letter-spacing: 0.08em;
   font-size: 0.85rem;
 }
-.sub {
-  color: var(--stone);
-  font-size: 0.9rem;
-}
 
 main {
   max-width: 40rem;
@@ -61,11 +57,17 @@ h2 {
   color: var(--stone);
   margin: 0;
 }
-.lede { margin: 0.6rem 0; }
-.note {
-  font-size: 0.9rem;
-  color: var(--stone);
+.promise {
+  font-size: 1.15rem;
+  margin: 0 0 0.8rem;
 }
+.lede { margin: 0.5rem 0; }
+.price {
+  font-size: 0.95rem;
+  color: var(--stone);
+  margin: 0.6rem 0 0;
+}
+.status { margin: 0.6rem 0 0; }
 
 ul, ol { padding-left: 1.2rem; }
 li { margin: 0.4rem 0; }
@@ -74,21 +76,65 @@ li { margin: 0.4rem 0; }
 
 a { color: var(--ink); }
 
-.btn {
-  display: inline-block;
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.waitform { margin: 1.5rem 0 0; }
+.waitform .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.waitform input {
+  flex: 1 1 12rem;
+  font: inherit;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+}
+.waitform button {
   font-family: ui-sans-serif, system-ui, sans-serif;
   background: var(--btn);
   color: var(--btn-ink);
-  text-decoration: none;
+  border: 0;
   padding: 0.7rem 1rem;
   font-size: 0.9rem;
+  cursor: pointer;
 }
-.btn:hover { opacity: 0.9; }
+.waitform button:hover { opacity: 0.9; }
+.waitform button:disabled { opacity: 0.5; cursor: default; }
+
+.still {
+  margin: 0 0 2rem;
+}
+.still-frame {
+  min-height: 12rem;
+  border: 1px dashed var(--stone);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--ink);
+  aspect-ratio: 16 / 9;
+}
+.still-sub {
+  color: var(--stone);
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
 
 footer {
   max-width: 40rem;
   margin: 0 auto;
-  padding: 0 1.25rem 3rem;
+  padding: 1.25rem 1.25rem 3rem;
   color: var(--stone);
   font-size: 0.85rem;
   border-top: 1px solid var(--line);

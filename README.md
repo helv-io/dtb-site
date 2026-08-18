@@ -1,7 +1,5 @@
 # dTb pitch site
 
-Public pitch for dTb (dashcam T board).
+https://helv-io.github.io/dtb-site/
 
-Product: a Pi in the car running TeslaUSB. We render. Finished video is served from S3.
-
-Pages: https://helv-io.github.io/dtb-site/
+We send a small computer. You plug it into the car USB. Park on home wifi. We handle the rest.
